@@ -64,6 +64,7 @@
 
   console.timeEnd("array length cach after");
 
+
   // function call
 
   var func1 = function () {
@@ -93,5 +94,20 @@
   func2();
   console.timeEnd("function call after");
 
+
+  // new Object
+  var max = 1000;
+  var i;
+  console.time("new Object or Literal before");
+  for(i = 0; i < max; i++){
+    var obj = new Object();
+  }
+  console.timeEnd("new Object or Literal before");
+
+  console.time("new Object or Literal after");
+  for(i = 0; i < max; i++){
+    var obj = {};
+  }
+  console.timeEnd("new Object or Literal after");
 
 })(window);
