@@ -154,6 +154,27 @@
   }
   console.timeEnd("global local cash after");
 
+  // logical operators
+  var tru = true;
+  var fal = false;
+  var max = 1000;
+  var i;
+  console.time("logical operators before");
+  for(i = 0; i < max; i++){
+    (function(){
+      return tru && fal;
+    })();
+  }
+  console.timeEnd("logical operators before");
+
+  console.time("logical operators after");
+  for(i = 0; i < max; i++){
+    (function(){
+      return fal && tru;
+    })();
+  }
+  console.timeEnd("logical operators after");
+
 
 
 
