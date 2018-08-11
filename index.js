@@ -176,6 +176,44 @@
   console.timeEnd("logical operators after");
 
 
+  // function scope
+  var max = 1000;
+  var i;
+  console.time("function scope before");
+  for(i = 0; i < max; i++){
+    (function(){
+      var j = i;
+    })();
+  }
+  console.timeEnd("function scope before");
+
+  console.time("function scope after");
+  for(i = 0; i < max; i++){
+    var j = i;
+  }
+  console.timeEnd("function scope after");
+
+
+  // try catch
+  var max = 1000;
+  var i;
+  console.time("try catch before");
+  for(i = 0; i < max; i++){
+    (function(){
+      try{
+        var j = i;
+      }catch(e){
+        
+      }
+    })();
+  }
+  console.timeEnd("try catch before");
+
+  console.time("try catch after");
+  for(i = 0; i < max; i++){
+    var j = i;
+  }
+  console.timeEnd("try catch after");
 
 
 })(window);
