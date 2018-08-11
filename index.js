@@ -110,4 +110,32 @@
   }
   console.timeEnd("new Object or Literal after");
 
+
+  // loop expansion
+  var max = 100;
+  var i;
+  var j = 0;
+  console.time("loop expansion before");
+  while(i--){
+    j++;
+  }
+  console.timeEnd("loop expansion before")
+
+
+  console.time("loop expansion after");
+  num = 0;
+  j = 0;
+  j++; j++; j++; j++; j++; j++; j++; j++; j++; j++;
+  j++; j++; j++; j++; j++; j++; j++; j++; j++; j++;
+  j++; j++; j++; j++; j++; j++; j++; j++; j++; j++;
+  j++; j++; j++; j++; j++; j++; j++; j++; j++; j++;
+  j++; j++; j++; j++; j++; j++; j++; j++; j++; j++;
+  j++; j++; j++; j++; j++; j++; j++; j++; j++; j++;
+  j++; j++; j++; j++; j++; j++; j++; j++; j++; j++;
+  j++; j++; j++; j++; j++; j++; j++; j++; j++; j++;
+  j++; j++; j++; j++; j++; j++; j++; j++; j++; j++;
+  j++; j++; j++; j++; j++; j++; j++; j++; j++; j++;
+  console.timeEnd("loop expansion after")
+
+
 })(window);
