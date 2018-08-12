@@ -1,24 +1,24 @@
 (function(global){
 
-  // for
+  // dom direct or variable
   var str = "";
   var max = 1000;
   var i;
 
-  console.time("for before");
+  console.time("dom direct or variable before");
   for(i = 0; i < max; i++){
     document.getElementById("div1").innerHTML += i + ", ";
   }
-  console.timeEnd("for before");
+  console.timeEnd("dom direct or variable before");
 
-  console.time("for after");
+  console.time("dom direct or variable after");
   var str = "";
   for(i = 0; i < max; i++){
     str += i + ", ";
   }
 
   document.getElementById("div2").innerHTML = str;
-  console.timeEnd("for after");
+  console.timeEnd("dom direct or variable after");
 
 
   // style
@@ -36,6 +36,23 @@
     var margin = style.margin;
   }
   console.timeEnd("style after");
+
+
+  // dom class or id
+  var max = 1000;
+  var i;
+
+  console.time("dom class or id before");
+  for(i = 0; i < max; i++){
+    document.getElementsByClassName("div1")[0].innerHTML += i + ", ";
+  }
+  console.timeEnd("dom class or id before");
+
+  console.time("dom class or id after");
+  for(i = 0; i < max; i++){
+    document.getElementById("div2").innerHTML += i + ", ";
+  }
+  console.timeEnd("dom class or id after");
 
 
   // array length cash
