@@ -55,6 +55,30 @@
   console.timeEnd("dom class or id after");
 
 
+  // dom createDocumentFragment
+
+  var max = 10000;
+  var i;
+
+  console.time("dom createDocumentFragment before");
+  for(i = 0; i < max; i++){
+    var p = document.createElement("p");
+    p.textContent = i + ",";
+    document.getElementById("div1").appendChild(p);
+  }
+  console.timeEnd("dom createDocumentFragment before");
+
+  console.time("dom createDocumentFragment after");
+  var docFlag = document.createDocumentFragment();
+  for(i = 0; i < max; i++){
+    var p = document.createElement("p");
+    p.textContent = i + ",";
+    docFlag.appendChild(p);
+  }
+  document.getElementById("div2").appendChild(docFlag);
+  console.timeEnd("dom createDocumentFragment after");
+
+
   // array length cash
 
   var arr = [];
