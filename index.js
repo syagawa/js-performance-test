@@ -34,6 +34,24 @@
 
   };
 
+  APP.timer2 = function(){
+    var self = this;
+    self.start_time = new Date().getTime();
+    self.end = function(){
+      if(!self.start_time){
+        console.log("Start time is not set.");
+        return false;
+      }
+      return new Date().getTime() - self.start_time + " ms";
+    }
+  };
+
+  APP.runCode = function(code, message){
+    var timer = new APP.timer2();
+    code();
+    var t = timer.end();
+    return message + " " + t;
+  };
 
 
   document.getElementById("load_btn").addEventListener("click", function(e){
