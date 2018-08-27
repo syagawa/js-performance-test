@@ -30,6 +30,20 @@
     hide: function(){
       var display = document.getElementById("display");
       display.innerHTML = "";
+    },
+    make: function(){
+      var Timer = function(){
+        var self = this;
+        self.start_time = new Date().getTime();
+        self.end = function(){
+          if(!self.start_time){
+            console.log("Start time is not set.");
+            return false;
+          }
+          return new Date().getTime() - self.start_time + " ms";
+        }
+      };
+      return new Timer();
     }
 
   };
@@ -47,7 +61,7 @@
   };
 
   APP.runCode = function(code, message){
-    var timer = new APP.timer2();
+    var timer = new APP.timer.make();
     code();
     var t = timer.end();
     return message + " " + t;
