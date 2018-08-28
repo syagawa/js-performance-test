@@ -48,23 +48,26 @@
 
   };
 
-  APP.timer2 = function(){
-    var self = this;
-    self.start_time = new Date().getTime();
-    self.end = function(){
-      if(!self.start_time){
-        console.log("Start time is not set.");
-        return false;
-      }
-      return new Date().getTime() - self.start_time + " ms";
-    }
-  };
-
   APP.runCode = function(code, message){
     var timer = new APP.timer.make();
     code();
     var t = timer.end();
     return message + " " + t;
+  };
+
+  APP.runCodes = function(arr){
+    APP.timer.hide();
+
+    var len = arr.length,
+        results = [],
+        result,
+        i;
+    for(i = 0; i < len; i++){
+      result = APP.runCode(arr[i].code, arr[i].message);
+      results.push(result);
+    }
+
+    APP.timer.show(results);
   };
 
 
