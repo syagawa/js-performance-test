@@ -52,7 +52,8 @@
     var timer = new APP.timer.make();
     code();
     var t = timer.end();
-    return message + " " + t;
+    var codestr = code.toString();
+    return message + " " + t + " " + codestr;
   };
 
   APP.runCodes = function(arr){
@@ -63,7 +64,7 @@
         result,
         i;
     for(i = 0; i < len; i++){
-      result = APP.runCode(arr[i].code, arr[i].message);
+      result = APP.runCode(arr[i].code, (i + 1 + " ") + arr[i].message);
       results.push(result);
     }
 
