@@ -22,9 +22,12 @@
       var i;
       var len = arr.length;
       for(i = 0; i < len; i++){
-        var p = document.createElement("p");
-        p.innerHTML = arr[i];
-        display.appendChild(p);
+        var mes = document.createElement("p");
+        mes.innerHTML = arr[i].message;
+        var code = document.createElement("p");
+        code.innerHTML = arr[i].code;
+        display.appendChild(mes);
+        display.appendChild(code);
       }
     },
     hide: function(){
@@ -52,8 +55,11 @@
     var timer = new APP.timer.make();
     code();
     var t = timer.end();
-    var codestr = code.toString();
-    return message + " " + t + " " + codestr;
+    var codestr = JSON.stringify(code.toString().replace(/\n/g, "<br>"));
+    return {
+      message: message + " " + t,
+      code: codestr
+    };
   };
 
   APP.runCodes = function(arr){
