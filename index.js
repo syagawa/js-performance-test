@@ -55,7 +55,13 @@
     var timer = new APP.timer.make();
     code();
     var t = timer.end();
-    var codestr = JSON.stringify(code.toString().replace(/\n/g, "<br>").replace(/\s/g, "&nbsp;"));
+    var codestr = JSON.stringify(
+                    code.toString()
+                      .replace(/.*function.*\n/, "")
+                      .replace(/(?!.*\n).*/, "")
+                      .replace(/\n/g, "<br>")
+                      .replace(/\s/g, "&nbsp;")
+                  ).replace(/[\"]/g,"");
     return {
       message: message + " " + t,
       code: codestr
