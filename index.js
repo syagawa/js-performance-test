@@ -1,6 +1,7 @@
 (function(global){
 
   global.APP = global.APP ? global.APP : {};
+  var APP = global.APP;
 
   APP.timer = {
     start_time: "",
@@ -44,7 +45,7 @@
             return false;
           }
           return new Date().getTime() - self.start_time + " ms";
-        }
+        };
       };
       return new Timer();
     }
@@ -61,7 +62,7 @@
                       .replace(/(?!.*\n).*/, "")
                       .replace(/\n/g, "<br>")
                       .replace(/\s/g, "&nbsp;")
-                  ).replace(/[\"]/g,"");
+                  ).replace(/["]/g,"");
     return {
       message: message + " " + t,
       code: codestr
@@ -84,19 +85,20 @@
   };
 
 
-  document.getElementById("load_btn").addEventListener("click", function(e){
+  document.getElementById("load_btn").addEventListener(
+    "click",
+    function(e){
 
-    APP.timer.hide();
+      APP.timer.hide();
+      var script = document.createElement("script");
 
-    var script = document.createElement("script");
+      var src = document.getElementById("select_src").value;
+      script.src = "./lib/" + src;
+      document.getElementById("js_src").appendChild(script);
 
-    var src = document.getElementById("select_src").value;
-    script.src = "./lib/" + src;
-    document.getElementById("js_src").appendChild(script);
-
-    script.remove();
-  });
-
+      script.remove();
+    }
+  );
 
 
 })(window);
