@@ -69,16 +69,19 @@
     };
   };
 
-  APP.runCodes = function(arr){
+  APP.runCodes = function(codes, clean){
     APP.timer.hide();
 
-    var len = arr.length,
+    var len = codes.length,
         results = [],
         result,
         i;
     for(i = 0; i < len; i++){
-      result = APP.runCode(arr[i].code, (i + 1 + " ") + arr[i].message);
+      result = APP.runCode(codes[i].code, (i + 1 + " ") + codes[i].message);
       results.push(result);
+      if(clean){
+        clean();
+      }
     }
 
     APP.timer.show(results);
