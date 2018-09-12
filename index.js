@@ -69,14 +69,20 @@
     };
   };
 
-  APP.runCodes = function(codes, clean){
+  APP.runCodes = function(obj){
     APP.timer.hide();
 
-    var len = codes.length,
+    var codes = obj.codes,
+        prepare = obj.prepare,
+        clean = obj.clean,
+        len = codes.length,
         results = [],
         result,
         i;
     for(i = 0; i < len; i++){
+      if(prepare){
+        prepare();
+      }
       result = APP.runCode(codes[i].code, (i + 1 + " ") + codes[i].message);
       results.push(result);
       if(clean){
