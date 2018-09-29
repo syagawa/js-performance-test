@@ -6,14 +6,14 @@
   APP.timer = {
     start_time: "",
     start: function(){
-      this.start_time = new Date().getTime();
+      this.start_time = performance.now();
     },
     end: function(){
       if(!this.start_time){
         console.log("Start time is not set.");
         return false;
       }
-      var end_time = new Date().getTime();
+      var end_time = performance.now();
       var time = end_time - this.start_time;
       this.start_time = "";
       return time;
@@ -38,13 +38,13 @@
     make: function(){
       var Timer = function(){
         var self = this;
-        self.start_time = new Date().getTime();
+        self.start_time = performance.now();
         self.end = function(){
           if(!self.start_time){
             console.log("Start time is not set.");
             return false;
           }
-          return new Date().getTime() - self.start_time + " ms";
+          return performance.now() - self.start_time + " ms";
         };
       };
       return new Timer();
