@@ -62,7 +62,8 @@
                       .replace(/(?!.*\n).*/, "")
                       .replace(/\n/g, "<br>")
                       .replace(/\s/g, "&nbsp;")
-                  ).replace(/["]/g,"");
+                  ).replace(/["]/g,'')
+                   .replace(/\\/g, '"');
     return {
       message: message + " " + t,
       code: codestr
