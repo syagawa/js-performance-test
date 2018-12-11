@@ -94,11 +94,9 @@
     APP.timer.show(results);
   };
 
-
   document.getElementById("load_btn").addEventListener(
     "click",
     function(e){
-
       APP.timer.hide();
       var script = document.createElement("script");
 
@@ -109,6 +107,5 @@
       script.remove();
     }
   );
-
 
 })(window);
