@@ -183,6 +183,10 @@
     {
       src: "variableNameLength.js",
       name: "variable name length"
+    },
+    {
+      src: "regexp.js",
+      name: "regexp"
     }
   ];
 
