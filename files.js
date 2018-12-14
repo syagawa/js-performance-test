@@ -191,7 +191,13 @@
     {
       src: "arrayIncludes.js",
       name: "array includes"
+    },
+    {
+      src: "map.js",
+      name: "map"
     }
+
+
   ];
 
   files.sort(function(a, b){
