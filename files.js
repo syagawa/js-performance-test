@@ -187,6 +187,10 @@
     {
       src: "regexp.js",
       name: "regexp"
+    },
+    {
+      src: "arrayIncludes.js",
+      name: "array includes"
     }
   ];
 
