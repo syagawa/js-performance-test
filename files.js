@@ -195,9 +195,11 @@
     {
       src: "map.js",
       name: "map"
+    },
+    {
+      src: "set.js",
+      name: "set"
     }
-
-
   ];
 
   files.sort(function(a, b){
