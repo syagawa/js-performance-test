@@ -199,6 +199,10 @@
     {
       src: "set.js",
       name: "set"
+    },
+    {
+      src: "domAppend.js",
+      name: "dom append"
     }
   ];
 
