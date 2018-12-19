@@ -203,6 +203,10 @@
     {
       src: "domAppend.js",
       name: "dom append"
+    },
+    {
+      src: "arrayPush.js",
+      name: "array push"
     }
   ];
 
