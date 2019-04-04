@@ -207,7 +207,12 @@
     {
       src: "arrayPush.js",
       name: "array push"
+    },
+    {
+      src: "eventListener.js",
+      name: "Event Listener"
     }
+
   ];
 
   files.sort(function(a, b){
