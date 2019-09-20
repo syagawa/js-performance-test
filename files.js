@@ -215,8 +215,11 @@
     {
       src: "nullUndefined.js",
       name: "Null Undefined"
+    },
+    {
+      src: "jsonParse.js",
+      name: "JSON Parse"
     }
-
   ];
 
   files.sort(function(a, b){
