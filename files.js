@@ -49,6 +49,10 @@
       name: "function scope"
     },
     {
+      src: "getDiff.js",
+      name: "get diff"
+    },
+    {
       src: "globalLocalCache.js",
       name: "global local cache"
     },
