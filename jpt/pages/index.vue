@@ -21,7 +21,7 @@
           target="_blank"
           class="button--grey"
         >
-          GitHub
+          GitHub {{ test }}
         </a>
       </div>
     </div>
@@ -30,10 +30,21 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
+import { mapState, mapActions, mapGetters, mapMutations } from "vuex";
 
 export default {
   components: {
     Logo
+  },
+  data: function(){
+    return {
+      ...mapGetters({
+        test: "test/currentTest"
+      })
+    };
+  },
+  mounted: function(){
+    console.info("mounted", this);
   }
 }
 </script>
