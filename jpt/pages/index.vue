@@ -38,10 +38,13 @@ export default {
   },
   data: function(){
     return {
-      ...mapGetters({
-        test: "test/currentTest"
-      })
     };
+  },
+  computed: {
+    ...mapGetters({
+      test: "test/currentTest"
+    })
+
   },
   mounted: function(){
     console.info("mounted", this);
